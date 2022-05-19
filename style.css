@@ -20,6 +20,7 @@ body{
     background-color: black;
     height: 100vh;
     font-family: 'Righteous', monospace;
+    column-gap: 10px;
 }
 ::selection{
     background-color: transparent;
@@ -30,7 +31,7 @@ body{
     background-color: black;
     display: flex;
     flex-direction: column;
-    border: solid 2px green;
+    border: solid 2px lime;
     width: 70%;
     padding: 20px;
     align-items: center;
@@ -48,9 +49,11 @@ body{
     color: lime;
     resize: none;
     font-family: 'Righteous', monospace;
+
 }
 #input::-webkit-scrollbar{
     background-color: green;
+    border-radius: 10px;
 }
 #input::-webkit-scrollbar-thumb{
     background-color: black;
@@ -104,4 +107,21 @@ h5{
     justify-items: center;
     align-items: center;
     /* align-self: flex-start; */
+}
+#result{
+    height: calc(100% - 4px);
+    width: calc(30% - 10px);
+    border-radius: 10px;
+    border:solid 2px lime;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#resultText{
+    color: lime;
+    text-align: center;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
