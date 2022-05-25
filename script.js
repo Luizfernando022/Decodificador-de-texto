@@ -2,6 +2,7 @@
 
 let input = document.getElementById('input')
 let buttonCriptografar = document.getElementById('cript')
+let buttonDescriptografar = document.getElementById('descript')
 let result = document.getElementById('result')
 let resultText = document.getElementById('resultText')
 let copyButton = document.getElementById('copy')
@@ -19,22 +20,39 @@ function texte(){
 }
 
 
-buttonCriptografar.addEventListener('click',showValue)
+buttonCriptografar.addEventListener('click',criptoValue)
+buttonDescriptografar.addEventListener('click',descriptoValue)
 
-function showValue(){
+function criptoValue(){
+
+    let value = input.value
+
+    array = value.split('')
+     console.log(array)
+
+
+    
+     let copyBtn = document.getElementById('copy')
+     copyBtn.style.display = "flex"
+     resultText.innerHTML = `<p>${cripto(array)}</p>`
+     array = []
+
+}
+
+function descriptoValue(array){
 
     let value = input.value
 
     array = value.split('')
 
-
-    
     let copyBtn = document.getElementById('copy')
     copyBtn.style.display = "flex"
-    resultText.innerHTML = `<p>${cripto(array)}</p>`
+    resultText.innerHTML = `<p>${descripto(array)}</p>`
+    array = []
 
-
-
+}
+function descripto(){
+    
 }
 
 
@@ -49,7 +67,10 @@ function cripto(array){
  return text
 }
 
-function verify(e,num){
+
+
+
+function verifyCripto(e,num){
     e = e
     if(e == "a"){
         e = "a01100001"
