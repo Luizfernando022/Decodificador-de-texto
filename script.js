@@ -56,14 +56,14 @@ function descriptoValue(array){
 
 }
 function descripto(array){
-
-
+let num = 0
 array.forEach(element=>{
     verifyDescripto(element)
+    num++
     
 })
    let teste = arrayNumbers.join(' ')
-    console.log(teste.split(' - '))
+    
 
 return teste
     
@@ -109,10 +109,27 @@ function verifyCripto(e,num){
 }
 function verifyDescripto(e){
     elemento = e
+    let indexVez = 0
     if(elemento == 0 || e == 1){
         e = e 
-        arrayNumbers.push(e)
+        if(num == 8){
+            num = 0
+            indexVez++
+            criarNovoIndice()
+            arrayNumbers[indexVez].push(e)
+            num++
+        }else{
+            arrayNumbers[indexVez].push(e)
+            num++
+        }
     }else{
-        arrayNumbers.push(' ')
+        arrayNumbers[indexVez].push(e)
     }
+}
+
+
+function criarNovoIndice(){
+
+    arrayNumbers.push([])
+
 }
